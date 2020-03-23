@@ -1,2 +1,2 @@
 # Chereza
- Basic commands for a server named Chereza
+A basic anti grief plugin for now
