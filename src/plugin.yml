@@ -1,0 +1,10 @@
+name: griefProtector
+author: Cazcez,
+dev-url: http://github.com/Cazcez/griefProtector
+main: Cazcez.griefProtection
+#softdepend: [Vault] #bütün sürümlerde çalışması için #1.15 için istiyom ben sal .d 1.15 svm yok 1.14.4 var #çalışır merak etme
+version: 0.0.1ab
+api-version: 1.15
+commands:
+  claimchunk:
+    description: it says "hello"
