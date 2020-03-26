@@ -4,6 +4,7 @@ import Cazcez.Storage.CreateClaim;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
+import org.bukkit.World;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
@@ -22,12 +23,15 @@ public class command implements CommandExecutor {
         //TODO
         if (label.equalsIgnoreCase("claimchunk"))
         {
-            Player player = (Player)sender; // gerek yok la
+            //Player player = (Player)sender; // gerek yok la
 
-            plugin.hash.putIfAbsent(player.getLocation().getChunk(), player);
+            //plugin.hash.putIfAbsent(player.getLocation().getChunk(), player);
             CreateClaim claim = new CreateClaim();
-            claim.CreateClaimYAML(player, player.getLocation().getChunk());
+            //claim.CreateClaimYAML(player, player.getLocation().getChunk());
 
+            World anadunya = Bukkit.getWorld("survival");
+            Chunk testchunk = anadunya.getSpawnLocation().getChunk();
+            claim.CreateClaimYAML(sender, testchunk);
 
             sender.sendMessage("blablabla");
         }
