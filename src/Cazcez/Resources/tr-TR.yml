@@ -1,0 +1,14 @@
+no-permission-for-AddNewMemberToClaim: &cBunun için yetkin yok!
+no-permission-for-Break: &cBunun için yetkin yok!
+no-permission-for-Build: &cBunun için yetkin yok!
+no-permission-for-UseContainers: &cBunun için yetkin yok!
+no-permission-for-UseDoors: &cBunun için yetkin yok!
+no-permission-for-Deposit: &cBunun için yetkin yok!
+no-permission-for-Withdraw: &cBunun için yetkin yok!
+succesfully-Claimed: &aBaşarıyla arsa sahiplenildi!
+succesfully-AddNewMemberToClaim: &aBaşarıyla kullanıcı eklendi!
+succesfully-UserRemoved: &aBaşarıyla kullanıcı kaldırıldı!
+succesfully-permission-set: &aBaşarıyla kullanıcının yetkisi ayarlandı
+error-AlreadyClaimed: &cBu arsa çoktan sahiplendildi!
+error-YouAreOwner: &cKendi arsana kendini ekleyemezsin!
+error-permission-set: &cYetkileri ayarlarken bir sorun oluştu!
