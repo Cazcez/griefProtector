@@ -37,7 +37,9 @@ public class event implements Listener
         {
             FileConfiguration dataConfiguration = YamlConfiguration.loadConfiguration(claimDataFolder);
 
-            if (dataConfiguration.get("Owner") == e.getPlayer().getUniqueId())
+
+
+            if (dataConfiguration.get("claimOwner").equals(e.getPlayer().getUniqueId().toString()))
             {
                 e.getPlayer().sendMessage("okey bu sensin");
             }
