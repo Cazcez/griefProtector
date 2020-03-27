@@ -6,5 +6,5 @@ main: Cazcez.griefProtection
 version: 0.0.1ab
 api-version: 1.15
 commands:
-  claimchunk:
+  claim:
     description: it says "hello"

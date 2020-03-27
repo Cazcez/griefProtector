@@ -15,7 +15,6 @@ public class griefProtection extends JavaPlugin
 {
     public static HashMap<Chunk, Player> hash = new HashMap<Chunk, Player>();
 
-    public File fileConfig = new File("plugins/griefProtector", "config.yml");
     public File fileData = new File("plugins/griefProtector/claimData");
 
 
@@ -23,17 +22,11 @@ public class griefProtection extends JavaPlugin
     public void onEnable()
     {
 
-        getCommand("claimchunk").setExecutor(new Cazcez.command());
+        getCommand("claim").setExecutor(new Cazcez.command());
         Bukkit.getPluginManager().registerEvents(new Cazcez.event(), this);
         getLogger().info(ChatColor.DARK_PURPLE + "Cazcez'in komutları ve eventleri kaydedildi!");
 
 
-        if (!fileConfig.exists()) {
-            fileConfig.mkdir();
-        }
-        if (!fileData.exists()) {
-            fileData.mkdir();
-        }
     }
 
 
