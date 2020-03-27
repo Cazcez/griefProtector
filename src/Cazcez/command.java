@@ -1,5 +1,6 @@
 package Cazcez;
 
+import Cazcez.Storage.AddMember;
 import Cazcez.Storage.CreateClaim;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
@@ -21,19 +22,52 @@ public class command implements CommandExecutor {
     public boolean onCommand(CommandSender sender, Command cmd, String label, String[] args)
     {
         //TODO
-        if (label.equalsIgnoreCase("claimchunk"))
+        if (label.equalsIgnoreCase("claim"))
         {
-            //Player player = (Player)sender; // gerek yok la
 
-            //plugin.hash.putIfAbsent(player.getLocation().getChunk(), player);
-            CreateClaim claim = new CreateClaim();
-            //claim.CreateClaimYAML(player, player.getLocation().getChunk());
 
-            World anadunya = Bukkit.getWorld("survival");
-            Chunk testchunk = anadunya.getSpawnLocation().getChunk();
-            claim.CreateClaimYAML(sender, testchunk);
+            Player player = (Player)sender;
 
-            sender.sendMessage("blablabla");
+            if (args.length == 0)
+            {
+
+            }
+            else if (args[0].equalsIgnoreCase("create"))
+            {
+                CreateClaim claim = new CreateClaim();
+
+
+                claim.CreateClaimYAML(player, player.getLocation().getChunk());
+
+                player.sendMessage("blablabla");
+            }
+            else if (args[0].equalsIgnoreCase("add"))
+            {
+
+                if (args.length == 2)
+                {
+                    Player target = Bukkit.getPlayer(args[1]);
+                    if (target == null)
+                    {
+                        sender.sendMessage(ChatColor.DARK_PURPLE + args[0] + "adlı Oyuncu bulunamadı!");
+                        return true;
+                    }
+                    else
+                    {
+                        AddMember member = new AddMember();
+
+                        member.AddMember(player.getLocation().getChunk(), player, target);
+                    }
+
+                }
+
+                else
+                {
+                    player.sendMessage("Kullanım: /claim add <player>");
+                }
+
+            }
+
         }
         return false;
     }
