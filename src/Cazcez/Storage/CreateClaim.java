@@ -4,7 +4,6 @@ import net.minecraft.server.v1_15_R1.IPlayerFileData;
 import org.bukkit.Bukkit;
 import org.bukkit.ChatColor;
 import org.bukkit.Chunk;
-import org.bukkit.command.CommandSender;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.entity.Player;
 import org.bukkit.configuration.file.YamlConfiguration;
@@ -18,7 +17,7 @@ public class CreateClaim
 {
     public File fileConfig = new File("plugins//griefProtector", "config.yml");
 
-    public void CreateClaimYAML(CommandSender owner, Chunk chunk)
+    public void CreateClaimYAML(Player owner, Chunk chunk)
     {
 
         File claimDataFolder = new File("plugins/griefProtector/claimData", "X=" + chunk.getX() + ", Z=" + chunk.getZ()  + ".yml");
@@ -48,14 +47,16 @@ public class CreateClaim
 
         //set YAML data
         dataConfiguration.set("claimTitle", owner.getName() + "'s claim");
-        dataConfiguration.set("claimDescription", owner.getName() + "Default description");
+        dataConfiguration.set("claimDescription", owner.getName() + " Default description");
 
         dataConfiguration.set("claimProtectorCoordinate.X", 0);
         dataConfiguration.set("claimProtectorCoordinate.Y", 60);
         dataConfiguration.set("claimProtectorCoordinate.Z", 0);
 
         dataConfiguration.set("claimVault", 0);
-        dataConfiguration.set("claimOwner", owner.getName());
+        dataConfiguration.set("claimOwner", owner.getUniqueId().toString());
+
+
 
         try
         {
